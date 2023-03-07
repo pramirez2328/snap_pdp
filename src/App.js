@@ -1,4 +1,4 @@
-import './App.css';
+import './style/Header.css';
 import Header from './components/Header';
 
 function App() {
