@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#header {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+#leftInfo {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#snapLogo {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+#snap {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: 900;
+  padding-bottom: 0.5rem;
+}
+
+#imgLogo {
+  width: 8rem;
+  height: 4rem;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+  font-style: 400;
+  margin-left: 1.3rem;
+}
+
+#rightInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40%;
+}
+
+#itemsInCart {
+  font-family: sans-serif;
+  font-style: 900;
+  font-size: 1.2rem;
+}
+
+#cart {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .categories {
+    width: 55%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 480px) {
+  .categories {
+    width: 100%;
   }
 }
