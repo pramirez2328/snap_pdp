@@ -1,9 +1,8 @@
 import './style/Header.css';
-import './style/Section.css';
 import './style/App.css';
 import Header from './components/Header';
-import Section from './components/Section';
-import Atc from './components/ATC';
+import Main from './components/Main';
+import Footer from './components/Footer';
 import { useState } from 'react';
 
 function App() {
@@ -11,10 +10,8 @@ function App() {
   return (
     <div id='App'>
       <Header items={items} />
-      <div id='content'>
-        <Section />
-        <Atc items={items} setItems={setItems} />
-      </div>
+      <Main items={items} setItems={setItems} />
+      <Footer />
     </div>
   );
 }

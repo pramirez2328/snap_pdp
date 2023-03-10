@@ -1,7 +1,7 @@
 function Atc({ items, setItems }) {
   return (
     <div className='atc'>
-      <button onClick={() => setItems((items += 1))}>add to cart</button>
+      <button onClick={() => setItems((items += 1))}>Add To Bag</button>
     </div>
   );
 }
