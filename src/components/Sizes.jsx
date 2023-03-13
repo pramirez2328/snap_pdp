@@ -2,8 +2,7 @@ function Sizes() {
   return (
     <div className='sizes'>
       <div>
-        <h4>Sizes (US)</h4>
-        <h4 id='sizeChart'>Size Chart</h4>
+        <h5>Sizes (US)</h5>
       </div>
 
       <ul className='listOfSizes'>

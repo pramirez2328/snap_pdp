@@ -1,5 +1,6 @@
 import tshirt1 from '../assets/tshirt1.jpg';
 import tshirt2 from '../assets/tshirt2.jpg';
+import '../style/Thumbnail.css';
 
 function Thumbnail() {
   return (

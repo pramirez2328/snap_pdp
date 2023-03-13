@@ -1,3 +1,5 @@
+import '../style/Description.css';
+
 function Description() {
   return (
     <>
