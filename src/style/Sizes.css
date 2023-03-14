@@ -1,0 +1,15 @@
+.listOfSizes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 0 20px 0;
+  list-style-type: none;
+  padding: 0;
+}
+
+.size {
+  border: 2.5px solid #000;
+  border-radius: 10%;
+  padding: 0.7rem 1rem;
+  margin-right: 1rem;
+}

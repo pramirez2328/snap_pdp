@@ -1,9 +1,9 @@
 #section-left {
   display: flex;
-  width: 65%;
+  width: 70%;
   margin: 0 1rem;
 }
 
 #section-right {
-  width: 35%;
+  width: 30%;
 }

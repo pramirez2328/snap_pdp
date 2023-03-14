@@ -1,4 +1,5 @@
-function Sizes() {
+import '../style/Sizes.css';
+function Sizes({ setSize }) {
   return (
     <div className='sizes'>
       <div>
@@ -6,11 +7,21 @@ function Sizes() {
       </div>
 
       <ul className='listOfSizes'>
-        <li className='size'>XS</li>
-        <li className='size'>S</li>
-        <li className='size'>M</li>
-        <li className='size'>L</li>
-        <li className='size'>XL</li>
+        <li className='size' onClick={() => setSize()}>
+          XS
+        </li>
+        <li className='size' onClick={() => setSize()}>
+          S
+        </li>
+        <li className='size' onClick={() => setSize()}>
+          M
+        </li>
+        <li className='size' onClick={() => setSize()}>
+          L
+        </li>
+        <li className='size' onClick={() => setSize()}>
+          XL
+        </li>
       </ul>
     </div>
   );

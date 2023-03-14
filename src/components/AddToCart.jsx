@@ -1,7 +1,8 @@
-function Atc({ items, setItems }) {
+import '../style/AddToCart.css';
+function Atc({ setItems }) {
   return (
     <div className='atc'>
-      <button onClick={() => setItems((items += 1))}>Add To Bag</button>
+      <button onClick={() => setItems()}>Add To Bag</button>
     </div>
   );
 }

@@ -7,10 +7,22 @@ import { useState } from 'react';
 
 function App() {
   const [items, setItems] = useState(0);
+  const [size, setSize] = useState(false);
+
+  const handleAddSize = () => {
+    setSize(!size);
+    if (size) {
+
+    }
+  };
+
+  const handleAddToCart = () => {
+    setItems(items + 1);
+  };
   return (
     <div id='App'>
       <Header items={items} />
-      <Main items={items} setItems={setItems} />
+      <Main setSize={handleAddSize} setItems={handleAddToCart} />
       <Footer />
     </div>
   );

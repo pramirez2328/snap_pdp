@@ -5,7 +5,7 @@ import Atc from './AddToCart';
 import FitFinderAndSizeChart from './FitFinderAndSizeChart';
 import '../style/Main.css';
 
-function Main({ items, setItems }) {
+function Main({ setSize, setItems }) {
   return (
     <main id='main'>
       <div id='section-left'>
@@ -14,8 +14,8 @@ function Main({ items, setItems }) {
       <div id='section-right'>
         <Description />
         <FitFinderAndSizeChart />
-        <Sizes />
-        <Atc items={items} setItems={setItems} />
+        <Sizes setSize={setSize} />
+        <Atc setItems={setItems} />
       </div>
     </main>
   );
