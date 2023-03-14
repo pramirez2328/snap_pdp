@@ -7,13 +7,23 @@ import { useState } from 'react';
 
 function App() {
   const [items, setItems] = useState(0);
-  const [size, setSize] = useState(false);
+  const [sizes, setSizes] = useState([
+    { key: 0, value: 'XS', liClass: 'inactive' },
+    { key: 1, value: 'S', liClass: 'inactive' },
+    { key: 2, value: 'M', liClass: 'inactive' },
+    { key: 3, value: 'L', liClass: 'inactive' },
+    { key: 4, value: 'XL', liClass: 'inactive' },
+  ]);
 
-  const handleAddSize = () => {
-    setSize(!size);
-    if (size) {
-
-    }
+  const handleAddSize = (currentSize) => {
+    const newSizes = sizes.map((size) => {
+      if (size.value === currentSize) {
+        return { ...size, liClass: 'active' };
+      } else {
+        return { ...size, liClass: 'inactive' };
+      }
+    });
+    setSizes(newSizes);
   };
 
   const handleAddToCart = () => {
@@ -22,7 +32,7 @@ function App() {
   return (
     <div id='App'>
       <Header items={items} />
-      <Main setSize={handleAddSize} setItems={handleAddToCart} />
+      <Main sizes={sizes} setSize={handleAddSize} setItems={handleAddToCart} />
       <Footer />
     </div>
   );
