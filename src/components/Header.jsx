@@ -1,7 +1,8 @@
 import logo from '../assets/snapLogo.jpg';
 import cartLogo from '../assets/cart.png';
+import AddToCartPopUp from './AddToCartPopUp';
 
-function Header({ items }) {
+function Header({ items, currentSize }) {
   return (
     <header id='header'>
       <div id='leftInfo'>
@@ -16,6 +17,7 @@ function Header({ items }) {
         </div>
       </div>
       <div id='rightInfo'>
+        <AddToCartPopUp size={currentSize} />
         <p id='itemsInCart'>{items}</p>
         <img id='cart' src={cartLogo} alt='cart' />
       </div>

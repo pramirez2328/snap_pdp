@@ -1,0 +1,16 @@
+.atc-pop-up {
+  position: fixed;
+  top: 7%;
+  right: 10%;
+  width: 17%;
+  height: 20%;
+  background: white;
+  border: 1px solid black;
+  border-radius: 10%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+}

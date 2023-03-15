@@ -1,5 +1,5 @@
 import '../style/Sizes.css';
-function Sizes({ sizes, setSize }) {
+function Sizes({ sizes, handleAddSize }) {
   return (
     <div className='sizes'>
       <div>
@@ -11,7 +11,7 @@ function Sizes({ sizes, setSize }) {
           <li
             className={`size ${size.liClass}`}
             key={size.key}
-            onClick={() => setSize(size.value)}
+            onClick={() => handleAddSize(size.value)}
           >
             {size.value}
           </li>

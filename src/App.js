@@ -3,10 +3,11 @@ import './style/App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [items, setItems] = useState(0);
+  const [currentSize, setCurrentSize] = useState({});
   const [sizes, setSizes] = useState([
     { key: 0, value: 'XS', liClass: 'inactive' },
     { key: 1, value: 'S', liClass: 'inactive' },
@@ -15,24 +16,46 @@ function App() {
     { key: 4, value: 'XL', liClass: 'inactive' },
   ]);
 
-  const handleAddSize = (currentSize) => {
-    const newSizes = sizes.map((size) => {
-      if (size.value === currentSize) {
-        return { ...size, liClass: 'active' };
-      } else {
-        return { ...size, liClass: 'inactive' };
-      }
+  useEffect(() => {
+    const sizeToCart = sizes.find((size) => size.liClass === 'active');
+    setCurrentSize(sizeToCart);
+  }, [sizes]);
+
+  const handlePopUp = () => {
+    const popUp = document.querySelector('.atc-pop-up');
+    popUp.style.display = 'flex';
+    popUp.style.justifyContent = 'center';
+    popUp.style.alignItems = 'center';
+    setTimeout(() => {
+      popUp.style.display = 'none';
+    }, 2000);
+  };
+
+  const handleAddSize = (current) => {
+    setSizes(() => {
+      return sizes.map((size) => {
+        if (size.value === current) {
+          return { ...size, liClass: 'active' };
+        } else {
+          return { ...size, liClass: 'inactive' };
+        }
+      });
     });
-    setSizes(newSizes);
   };
 
   const handleAddToCart = () => {
     setItems(items + 1);
+    handlePopUp();
   };
+
   return (
     <div id='App'>
-      <Header items={items} />
-      <Main sizes={sizes} setSize={handleAddSize} setItems={handleAddToCart} />
+      <Header items={items} currentSize={currentSize} />
+      <Main
+        sizes={sizes}
+        handleAddSize={handleAddSize}
+        setItems={handleAddToCart}
+      />
       <Footer />
     </div>
   );
