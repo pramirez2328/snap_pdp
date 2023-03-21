@@ -5,7 +5,7 @@ import Atc from './AddToCart';
 import FitFinderAndSizeChart from './FitFinderAndSizeChart';
 import '../style/Main.css';
 
-function Main({ sizes, handleAddSize, setItems }) {
+function Main({ sizes, handleAddSize, atcStatus, setItems }) {
   return (
     <main id='main'>
       <div id='section-left'>
