@@ -23,6 +23,7 @@ function App() {
 
   const handlePopUp = () => {
     const popUp = document.querySelector('.atc-pop-up');
+
     popUp.style.display = 'flex';
     popUp.style.justifyContent = 'center';
     popUp.style.alignItems = 'center';
@@ -44,8 +45,25 @@ function App() {
   };
 
   const handleAddToCart = () => {
-    setItems(items + 1);
-    handlePopUp();
+    const activeSize = sizes.filter((size) => size.liClass === 'active');
+    console.log(activeSize);
+    let sizeEnable = activeSize.length > 0 ? true : false;
+    if (sizeEnable) {
+      setItems(items + 1);
+      handlePopUp();
+    } else {
+      const popUp = document.querySelector('.atc-pop-up');
+
+      popUp.style.display = 'flex';
+      popUp.style.justifyContent = 'center';
+      popUp.style.alignItems = 'center';
+      popUp.style.fontSize = '2rem';
+      popUp.style.color = 'red';
+      popUp.innerHTML = 'chose a size';
+      setTimeout(() => {
+        popUp.style.display = 'none';
+      }, 1000);
+    }
   };
 
   return (

@@ -10,3 +10,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+.atc button:hover {
+  border: 2px solid rgb(249, 188, 21);
+  background-color: #fff;
+  color: #000;
+}
